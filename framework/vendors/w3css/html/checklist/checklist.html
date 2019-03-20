@@ -1,0 +1,15 @@
+<div id="{checklist_id}" class="checklist-header">
+  <input type="text" id="checklist-input" placeholder="{checklist_input_default_text}" class="w3-input w3-border w3-sand w3-mobile" onkeypress="CheckLists.AddCheckListItemOnReturn(event);">
+  <span onclick="CheckLists.AddNewChecklistItem();" class="checklist-add-button">Add</span>
+</div>
+
+<ul id="checklist-items-list" class="checklist-item-list">
+    {checklist_items}
+</ul>
+
+<script>
+    /** The list boxes are initialized */
+    CheckLists.InitializeListBoxes();
+    /** The close boxes are initialized */
+    CheckLists.InitializeCloseBoxes();
+</script>

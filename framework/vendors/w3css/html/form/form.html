@@ -1,0 +1,14 @@
+<div class="w3-container w3-half w3-margin">
+  <div class="w3-container w3-green">
+    <div class="w3-cell-row">
+    	<div class="w3-cell w3-left-align"><h3>{form_title}</h3></div>
+  	</div>
+  </div>
+  <form id="{form_id}" action="{form_action_url}" method="POST" class="w3-container w3-border">
+    <p>      
+    {form_fields_html}    
+    <p>
+    <button class="w3-btn w3-green" type="submit" name="submit">Submit</button>&nbsp;&nbsp;
+    <button class="w3-btn w3-red" type="button" name="cancel" onclick="location.href='{form_cancel_url}'">Cancel</button></p>
+  </form>
+</div>

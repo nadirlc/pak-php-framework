@@ -1,0 +1,113 @@
+/* The checklist header */
+.checklist-header {
+    box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul.checklist-item-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Style the list items */
+ul.checklist-item-list > li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 16px;
+    transition: 0.2s;
+    margin-top: 10px;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul.checklist-item-list > li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul.checklist-item-list > li:hover {
+    background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul.checklist-item-list > li.checked {
+    background: #888;
+    text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul.checklist-item-list > li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 15px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* Style the close button */
+.checklist-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    padding: 2.9%;
+}
+
+/* Style the close button on hover */
+.checklist-close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Style the header */
+.checklist-header {
+    background-color: #f44336;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Clear floats after the header */
+.checklist-header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the "Add" button */
+.checklist-add-button {
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Style the "Add" button on hover */
+.checklist-add-button:hover {
+    background-color: #bbb;
+}
+
+/* Style the input */
+#checklist-input {
+    border: none;
+    width: 75%;
+    padding: 0px;
+    float: left;
+}

@@ -1,0 +1,18 @@
+<div class="w3-display-container" onmouseout="Form.closable=true;" onmouseover="Form.closable=false;" id="form-container">
+<div class="w3-container w3-display-topmiddle">
+  <div class="w3-container w3-green form-title" id="form-header">
+    <div class="w3-cell w3-left-align">
+      <h3>{form_title}</h3>
+      <div onclick="document.getElementById('modal-form').style.display='none'" 
+      class="w3-button w3-display-topright w3-margin-right">&times;</div>
+    </div>
+  </div>
+  <form id="{form_id}" action="{form_action_url}" method="POST" class="w3-container w3-border w3-white">
+    <p>      
+    {form_fields_html}    
+    <p>
+    <button class="w3-btn w3-green" type="button" name="submit" onclick="{form_onclick}">{form_button_text}</button>&nbsp;&nbsp;
+    <button class="w3-btn w3-red" type="button" name="cancel" onclick="document.getElementById('modal-form').style.display='none'">Cancel</button></p>
+  </form>
+</div>
+</div>

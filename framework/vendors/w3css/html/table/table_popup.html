@@ -1,0 +1,28 @@
+{alert_confirmation}
+
+<div class="w3-main" id="crm-main">
+  <br/><br/>
+  <header class="w3-container">
+    <div class="w3-row">
+      <div class="w3-cell w3-left-align w3-twothird">
+        <h3>
+          {title} <span class="{input_button_css}"> | <a href="javascript:" onclick="return Form.DisplayForm('{input_button_url}', '{widget_id}');" title="{input_button_title}"><i class="fa fa-plus-circle w3-large"></i></a></span>
+        </h3>
+      </div>
+     <div class="w3-cell w3-cell-middle w3-right-align w3-third">{right_column}</div>
+  </div>
+  </header> 
+
+  {table_data}
+
+  <div class="w3-bar w3-blue w3-center">
+    {page_list}
+  </div>
+</div>
+
+<br/><br/>
+
+<div id="modal-form" class="w3-modal">
+  <div class="w3-modal-content" id="modal-form-content">
+  </div>
+</div>

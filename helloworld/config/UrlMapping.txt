@@ -1,0 +1,2 @@
+url: ^/$
+callback: {"object": "application", "function": "Generate"}
