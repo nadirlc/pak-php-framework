@@ -31,7 +31,7 @@
 │   ├── Path.php
 │   ├── RequiredObjects.php
 │   ├── Test.php
-│   └── UrlMapping.txt
+│   └── Callables.txt
 ├── Config.php
 ├── lib
 ├── test
@@ -46,9 +46,9 @@
     ├── pages
 </b></pre>
 
-<p class="mt-4">The config folder holds the application configuration files. Each file should contain a single method called <b>GetConfig</b>. This method should return an array containing configuration data, which overrides the default framework configuration. See the folder <b>framework/config</b>, for the default configuration files.</p>
+<p>The config folder holds the application configuration files. Each file should contain a single method called <b>GetConfig</b>. This method should return an array containing configuration data, which overrides the default framework configuration. See the folder <b>framework/config</b>, for the default configuration files.</p>
 
-<p>The <b>Custom.php</b> file can contain custom configuration. The <b>UrlMapping.txt</b> file defines the url routing information for the application.</p>
+<p>The <b>Custom.php</b> file can contain custom configuration. The <b>Callables.txt</b> file defines the url routing information for the application.</p>
 
 <p>The <b>lib</b> folder should contain the user defined library files. The <b>ui</b> folder contains the user interface related code. It should contains the sub folders shown in the above example. The <b>css</b> sub folder contains application css files, the <b>images</b> folder contains application image files, the <b>js</b> folder contains application JavaScript files. The <b>html</b> folder contains the html template fles. The <b>pages</b> folder should hold files that derive from the <b>\Framework\Application\Page</b> base class.</p>
 
@@ -70,7 +70,6 @@
 │   │   │   ├── ErrorHandling.php
 │   │   │   ├── FunctionValidation.php
 │   │   │   ├── LogHandling.php
-│   │   │   ├── RequestHandling.php
 │   │   │   ├── SessionHandling.php
 │   │   │   ├── Translation.php
 │   │   │   └── UrlRouting.php
@@ -127,11 +126,11 @@
 <p>The <b>index.php</b> file is the main entry point for the application. All url requests are routed by the <b>.htaccess</b> file to the <b>index.php</b> file. The <b>autoload.php</b> file is used to autoload classes. All classes should have a namespace. The folder structure of a class should match the class namespace</p>
 
 <h5>Application base classes</h5>
-<p>All Pak Php Framework applications are child classes of the <b>Application</b> base class, which is <b>application/Application.php</b>. Currently three types of applications are supports. Api, Command Line and Web.</p>
+<p>All Pak Php Framework applications are child classes of the <b>Application</b> base class, which is <b>application/Application.php</b>. Currently three types of applications are supported. Api, Command Line and Web.</p>
 
 <p>Api applications extend the <b>Api</b> base class. Command Line applications extend the <b>CommandLine</b> base class. Web applications can extend either the Web class or the Page class. The Page class is derived from the Web class.</p>
 
-<p>The main framework features which are Url Routing, Session Handling, Error Handling, Translation, Function Validation, Log Handling and Requestion Handling are implemented by classes in the <b>application/libraries</b> folder. Each feature is implemented separately from other features</p>
+<p>The main framework features which are Url Routing, Session Handling, Error Handling, Translation, Function Validation and Log Handling are implemented by classes in the <b>application/libraries</b> folder. Each feature is implemented separately from other features</p>
 
 <h5>Configuration</h5>
 <p>Configuration is one of the main features of the Pak Php Framework. It allows class objects to be used without explicitly initializing the object. The user only has to mention the class once in <b>config/RequiredObjects.php</b>. For example:</p>
@@ -147,9 +146,28 @@
 <p>The above code returns the current development mode of the application. If it is false, then application is in production mode</p>
 
 <h5>Url Routing</h5>
-<p>The Pak Php Framework provides Url Routing. The user application should contain the file <b>config/UrlMapping.txt</b>. This file specifies how the url requests will be served. For each url there is an entry. The first line in the entry is a regular expression that defines which urls to handle. The next line defines the callback function that should handle the url request. The line after that defines an optional validator callback. This is the callback to be used for validating application parameters</p>
+<p>The Pak Php Framework provides Url Routing. The user application should contain the file <b>config/Callables.txt</b>. This file specifies the callbacks for commands as well as callbacks for handling url requests. An entry in the file has two parts. The first part starts with <b>url:</b> or <b>command:</b>. The second part starts with <b>callback:</b>.
 
-<p>The following code shows sample contents of the <b>UrlMapping.txt</b> file:</p>
+<p>The application should define an entry for each url or pattern of urls. The first line in the entry is a regular expression that defines which urls to handle. The next line defines the callback function that should handle the url request. The line after that defines an optional validator callback. This is the callback to be used for validating application parameters.</p>
+
+<h5>Command Line scripts</h5>
+<p>If the application has functions that are called from the command line, then each function should have an entry in <b>Callables.txt</b>, that starts with <b>command:</b>. The entry should specify the name of the command that needs to be entered by the user from the command line. The next line defines the callback function for handling the command. For example if an application defines the command "Generate Site Map", then it can be run with the command: <b>php index.php --application=[app-name] --command="Generate Site Map"</b>. The <b>Callables.txt</b> file should contain the entry: </p>
+
+<pre><b>
+command: Generate Site Map
+callback: {"object": "websitetools", "function": "GenerateSiteMap"}
+</b></pre>
+
+<p>This entry means that the function <b>GenerateSiteMap</b> of the object "websitetools" will be called, when the command "Generate Site Map" is entered. The config file: <b>config\General.php</b>, should contain the following line:</p>
+
+<pre><b>
+/** The custom commands */
+$config['commands'] = array("Generate Site Map (generates site map of website)");
+</b></pre>
+
+<p>The above command defines the commands implemented by the application. These commands are shown to the user when he enters the command: <b>php index.php --application=[app-name] --command="Help"</b>. This command lists all commands supported by the application.</p>
+
+<p>The following code shows sample contents of the <b>Callables.txt</b> file:</p>
 
 <span data-toggle="collapse" data-target="#example3" class="cursor-pointer"><b><u>Click to view</u></b></span>
 
@@ -169,11 +187,11 @@ callback: {"object": "contactpage", "function": "Generate"}
 url: ^/contact/add$
 callback: {"object": "contactpage", "function": "SendContactMessage"}
 
-url: ^/comment/add$
-callback: {"object": "commentspage", "function": "AddComment"}
+command: Generate Site Map
+callback: {"object": "websitetools", "function": "GenerateSiteMap"}
 </b></pre>
 
-<h5 class="mt-4">Template Engine</h5>
+<h5>Template Engine</h5>
 <p>The Pak Php Framework includes a template engine which allows user applications to merge application data with html templates</p>
 
 <h5>Test Manager</h5>
@@ -196,11 +214,11 @@ param_int_name1|param_int_name2|param_int_name3|return_name1|return_type|rule
 
 <p>After a black box or white box test has been run, code coverage information for the test is displayed on the console and also saved to database. A summary of the test results is saved to database and file. A trace log of all function calls is also saved. The code coverage and function trace are generated using XDebug. The following screenshot shows the test results that are printed to the console after running black box tests:</p>
 
-<p><img src="/pakjiddat/ui/images/black-box-test-results.png" alt="Black Box Testing Results" /></p>
+<p><img src="https://www.pakjiddat.pk/pakjiddat/ui/images/black-box-test-results.png" alt="Black Box Testing Results" /></p>
 
 <p>The following screenshot shows the code coverage summary after running black box tests</p>
 
-<p><img src="/pakjiddat/ui/images/code-coverage.png" alt="Code Coverage Results" /></p>
+<p><img src="https://www.pakjiddat.pk/pakjiddat/ui/images/code-coverage.png" alt="Code Coverage Results" /></p>
 
 <h5>Utilities</h5>
 <p>The utilities folder contains classes that provide utility functions. These classes are used by the framework and may be used in user applications. See the <a href='/articles/view/257/utilities-framework'>Utilities Framework</a> package for information on how to use the utility classes.</p>
