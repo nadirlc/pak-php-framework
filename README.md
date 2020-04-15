@@ -1,4 +1,4 @@
-![Pak Php Framework Installation](hello-world.png)
+![Pak Php Framework Installation](https://pakjiddat.netlify.com/static/0bbdf53e45311e0a6f63599b55e00390/8c557/hello-world.png)
 
 ### Introduction
 The Pak Php Framework is a framework for developing PHP applications. It can be used to develop command line applications as well as browser applications based on [Model View Controller (MVC) design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
@@ -226,11 +226,11 @@ A UI (user interface) test allows the HTML of the response to be checked for err
 
 After a black box or white box test has been run, code coverage information for the test is displayed on the console and also saved to database. A summary of the test results is saved to database and file. A trace log of all function calls is also saved. The code coverage and function trace are generated using XDebug. The following screenshot shows the test results that are printed to the console after running black box tests:
 
-![Black Box Testing Results](black-box-test-results.png)
+![Black Box Testing Results](https://pakjiddat.netlify.com/static/2bea64f8b487d1d20acb58e98c955a56/8c557/black-box-test-results.png)
 
 The following screenshot shows the code coverage summary after running black box tests:
 
-![Code Coverage Results](code-coverage.png)
+![Code Coverage Results](https://pakjiddat.netlify.com/static/fae30daf90e230ecdf76875b356d9615/8c557/code-coverage.png)
 
 #### Utilities
 The utilities folder contains classes that provide utility functions. These classes are used by the framework and may be used in user applications. See the [Utilities Framework](/posts/utilities-framework) package for information on how to use the utility classes.
