@@ -1,30 +1,28 @@
-<p id="hello-world-screen"><img src="https://www.pakjiddat.pk/pakjiddat/ui/images/hello-world.png" alt="Pak Php Framework Installation"/></p>
+![Pak Php Framework Installation](hello-world.png)
 
-<h3>Introduction</h3>
-<p>The Pak Php Framework is a framework for developing Php applications. It can be used to develop command line applications as well as browser applications based on <a href='https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller'>Model View Controller (MVC) design pattern</a>. The following applications have been developed using the Pak Php Framework: <a href='https://www.pakjiddat.pk/'>Pak Jiddat website</a>, <a href='https://islamcompanion.pakjiddat.pk/'>Islam Companion website</a></p>
+### Introduction
+The Pak Php Framework is a framework for developing PHP applications. It can be used to develop command line applications as well as browser applications based on [Model View Controller (MVC) design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
-<p>An application framework provides libraries and tools for developing applications. The Pak Php framework provides error handling, function validation, log handling, session handling, url request handling based on MVC design pattern, url routing, translation and testing. It also includes utility classes that provide commonly used features such as Template Engine, Database Abstraction, Error Handling, File and Folder management and more.</p>
+An application framework provides libraries and tools for developing applications. The Pak Php framework provides error handling, function validation, log handling, session handling, URL request handling based on MVC design pattern, URL routing, translation and testing. It also includes utility classes that provide commonly used features such as Template Engine, Database Abstraction, Error Handling, File and Folder management and more.
 
-<p>The utility classes and features provided by the Pak Php Framework are implemented as separate components that are easy to extend. All components of the Pak Php Framework are based on the principles of <a href='https://en.wikipedia.org/wiki/Separation_of_concerns'>Separation of concerns</a> and <a href='https://en.wikipedia.org/wiki/Don%27t_repeat_yourself'>Don't repeat yourself</a>.</p>
+The utility classes and features provided by the Pak Php Framework are implemented as separate components that are easy to extend. All components of the Pak Php Framework are based on the principles of [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) and [Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-<p>Third party frontend libraries such as <a href='https://getbootstrap.com/'>Twitter Bootstrap</a>, <a href='https://jquery.com/'>JQuery</a>, <a href='https://www.w3schools.com/w3css/'>W3.CSS</a> etc can be integrated with the Pak Php Framework. The websites <a href='https://www.pakjiddat.pk/'>Pak Jiddat</a> and <a href='https://islamcompanion.pakjiddat.pk/'>Islam Companion</a> were developed using the Pak Php Framework.</p>
+Third party frontend libraries such as [Twitter Bootstrap](https://getbootstrap.com/), [JQuery](https://jquery.com/), [W3.CSS](https://www.w3schools.com/w3css/) etc can be integrated with the Pak Php Framework.
 
-<h3>Requirements</h3>
-<p>The Pak Php Framework requires Php 7.2 and above. The code for the Pak Php Framework is fully commented and compliant with the <a href='https://www.php-fig.org/psr/psr-2/'>PSR-2</a> coding guidelines. Parameter and return types are given for all methods</p>
+### Requirements
+The Pak Php Framework requires Php 7.2 and above. The code for the Pak Php Framework is fully commented and compliant with the [PSR-2](https://www.php-fig.org/psr/psr-2/) coding guidelines. Parameter and return types are given for all methods.
 
-<p>The Pak Php Framework does not have any external dependencies apart from the XDebug Php extension. It has its own Template Engine and Test Manager. It provides a simple framework for developing well tested applications.</p>
+The Pak Php Framework does not have any external dependencies apart from the XDebug PHP extension. It has its own Template Engine and Test Manager. It provides a simple framework for developing well tested applications.
 
-<h3>Development of the website</h3>
-<p>The website was developed by following the <a href='http://theleanstartup.com/principles'>Lean Startup principles</a>. The book <a href='https://www.packtpub.com/business/understanding-software'>Understanding Software</a> was an invaluable guide in the development of the framework.</p>
+### Development of the website
+The website was developed by following the [Lean Startup principles](http://theleanstartup.com/principles). The book [Understanding Software](https://www.packtpub.com/business/understanding-software) was an invaluable guide in the development of the framework.
 
-<p>The goal of the Pak Php Framework is to provide a light weight set of tools for developing professional, well tested web applications. Applications developed using the Pak Php Framework should be based on Lean Startup principles.</p>
+The goal of the Pak Php Framework is to provide a light weight set of tools for developing professional, well tested web applications. Applications developed using the Pak Php Framework should be based on Lean Startup principles.
 
-<h3>Application Structure</h3>
-<p>A single instance of the Pak Php Framework can support several applications. Each application must be in its own folder. The following shows the structure of a sample Pak Php Framework application:</p>
+### Application Structure
+A single instance of the Pak Php Framework can support several applications. Each application must be in its own folder. The following shows the structure of a sample Pak Php Framework application:
 
-<span data-toggle="collapse" data-target="#example1" class="cursor-pointer"><b><u>Click to view structure</u></b></span>
-
-<pre id="example1" class="collapse"><b>
+```
 ├── config
 │   ├── Custom.php
 │   ├── General.php
@@ -44,20 +42,18 @@
     ├── images
     ├── js
     ├── pages
-</b></pre>
+```
 
-<p>The config folder holds the application configuration files. Each file should contain a single method called <b>GetConfig</b>. This method should return an array containing configuration data, which overrides the default framework configuration. See the folder <b>framework/config</b>, for the default configuration files.</p>
+The config folder holds the application configuration files. Each file should contain a single method called **GetConfig**. This method should return an array containing configuration data, which overrides the default framework configuration. See the folder **framework/config**, for the default configuration files.
 
-<p>The <b>Custom.php</b> file can contain custom configuration. The <b>Callables.txt</b> file defines the url routing information for the application.</p>
+The **Custom.php** file can contain custom configuration. The **Callables.txt** file defines the URL routing information for the application.
 
-<p>The <b>lib</b> folder should contain the user defined library files. The <b>ui</b> folder contains the user interface related code. It should contains the sub folders shown in the above example. The <b>css</b> sub folder contains application css files, the <b>images</b> folder contains application image files, the <b>js</b> folder contains application JavaScript files. The <b>html</b> folder contains the html template fles. The <b>pages</b> folder should hold files that derive from the <b>\Framework\Application\Page</b> base class.</p>
+The **lib** folder should contain the user defined library files. The **ui** folder contains the user interface related code. It should contains the sub folders shown in the above example. The **css** sub folder contains application CSS files, the **images** folder contains application image files, the **js** folder contains application JavaScript files. The **html** folder contains the HTML template files. The **pages** folder should hold files that derive from the **\Framework\Application\Page** base class.
 
-<h3>Framework Structure</h3>
-<p>The Pak Php Framework has the following structure:</p>
+### Framework Structure
+The Pak Php Framework has the following structure:
 
-<span data-toggle="collapse" data-target="#example2" class="cursor-pointer"><b><u>Click to view structure</u></b></span>
-
-<pre id="example2" class="collapse"><b>
+```
 ├── autoload.php
 ├── index.php
 ├── .htaccess
@@ -120,58 +116,72 @@
 │   │   ├── TemplateUtils.php
 │   │   └── UtilitiesFramework.php
 │   └── vendors
-</b></pre>
+```
 
-<h5>Main entry point</h5>
-<p>The <b>index.php</b> file is the main entry point for the application. All url requests are routed by the <b>.htaccess</b> file to the <b>index.php</b> file. The <b>autoload.php</b> file is used to autoload classes. All classes should have a namespace. The folder structure of a class should match the class namespace</p>
+#### Main entry point
+The **index.php** file is the main entry point for the application. All URL requests are routed by the **.htaccess** file to the **index.php** file. The **autoload.php** file is used to autoload classes. All classes should have a name-space. The folder structure of a class should match the class name-space.
 
-<h5>Application base classes</h5>
-<p>All Pak Php Framework applications are child classes of the <b>Application</b> base class, which is <b>application/Application.php</b>. Currently three types of applications are supported. Api, Command Line and Web.</p>
+#### Application base classes
+All Pak Php Framework applications are child classes of the **Application** base class, which is **application/Application.php**. Currently three types of applications are supported. API, Command Line and Web.
 
-<p>Api applications extend the <b>Api</b> base class. Command Line applications extend the <b>CommandLine</b> base class. Web applications can extend either the Web class or the Page class. The Page class is derived from the Web class.</p>
+API applications extend the **Api** base class. Command Line applications extend the **CommandLine** base class. Web applications can extend either the Web class or the Page class. The Page class is derived from the Web class.
 
-<p>The main framework features which are Url Routing, Session Handling, Error Handling, Translation, Function Validation and Log Handling are implemented by classes in the <b>application/libraries</b> folder. Each feature is implemented separately from other features</p>
+The main framework features which are URL Routing, Session Handling, Error Handling, Translation, Function Validation and Log Handling are implemented by classes in the **application/libraries** folder. Each feature is implemented separately from other features.
 
-<h5>Configuration</h5>
-<p>Configuration is one of the main features of the Pak Php Framework. It allows class objects to be used without explicitly initializing the object. The user only has to mention the class once in <b>config/RequiredObjects.php</b>. For example:</p>
+#### Configuration
+Configuration is one of the main features of the Pak Php Framework. It allows class objects to be used without explicitly initializing the object. The user only has to mention the class once in **config/RequiredObjects.php**. For example:
 
-<pre><b>$config['contactpage']['class_name'] = '\PakJiddat\Ui\Pages\Contact';</b></pre>
+```
+$config['contactpage']['class_name'] = '\PakJiddat\Ui\Pages\Contact';
+```
 
-<p>The class can then be used using the syntax: <b>Config::GetComponent("contactpage");</b>. The framework takes care of initializing the class object. If the object has already been created, then it is simply returned. All classes are autoloaded using <a href='https://www.php-fig.org/psr/psr-4/'>PSR-4 autoloading standard</a>.</p>
+The class can then be used using the syntax: **Config::GetComponent("contactpage");**. The framework takes care of initializing the class object. If the object has already been created, then it is simply returned. All classes are autoloaded using [PSR-4 autoloading standard](https://www.php-fig.org/psr/psr-4/).
 
-<p>Application data is stored in configuration files inside the folder: <b>config/</b>. See the <a href='#application-structure'>user application structure</a> for details. Configuration variables can be accessed using the syntax:</p>
+Application data is stored in configuration files inside the folder: **config/**. See the [user application structure](#application-structure) for details. Configuration variables can be accessed using the syntax:
 
-<pre><b>Config::$config["general"]["dev_mode"]</b></pre>
+```
+Config::$config["general"]["dev_mode"]
+```
 
-<p>The above code returns the current development mode of the application. If it is false, then application is in production mode</p>
+The above code returns the current development mode of the application. If it is false, then application is in production mode.
 
-<h5>Url Routing</h5>
-<p>The Pak Php Framework provides Url Routing. The user application should contain the file <b>config/Callables.txt</b>. This file specifies the callbacks for commands as well as callbacks for handling url requests. An entry in the file has two parts. The first part starts with <b>url:</b> or <b>command:</b>. The second part starts with <b>callback:</b>.
+#### Url Routing
+The Pak Php Framework provides URL Routing. The user application should contain the file **config/Callables.txt**. This file specifies the callbacks for commands as well as callbacks for handling URL requests. An entry in the file has two parts. The first part starts with **url:** or **command:**. The second part starts with **callback:**.
 
-<p>The application should define an entry for each url or pattern of urls. The first line in the entry is a regular expression that defines which urls to handle. The next line defines the callback function that should handle the url request. The line after that defines an optional validator callback. This is the callback to be used for validating application parameters.</p>
+The application should define an entry for each URL or pattern of URLs. The first line in the entry is a regular expression that defines which URLs to handle. The next line defines the callback function that should handle the URL request. The line after that defines an optional validator callback. This is the callback to be used for validating application parameters.
 
-<h5>Command Line scripts</h5>
-<p>If the application has functions that are called from the command line, then each function should have an entry in <b>Callables.txt</b>, that starts with <b>command:</b>. The entry should specify the name of the command that needs to be entered by the user from the command line. The next line defines the callback function for handling the command. For example if an application defines the command "Generate Site Map", then it can be run with the command: <b>php index.php --application=[app-name] --command="Generate Site Map"</b>. The <b>Callables.txt</b> file should contain the entry: </p>
+#### Command Line scripts
+If the application has functions that are called from the command line, then each function should have an entry in **Callables.txt**, that starts with **command:**. The entry should specify the name of the command that needs to be entered by the user from the command line. The next line defines the callback function for handling the command. For example if an application defines the command "Generate Site Map", then it can be run with the command:
 
-<pre><b>
+```
+php index.php --application=[app-name] --command="Generate Site Map"
+```
+
+The **Callables.txt** file should contain the entry:
+
+```
 command: Generate Site Map
 callback: {"object": "websitetools", "function": "GenerateSiteMap"}
-</b></pre>
+```
 
-<p>This entry means that the function <b>GenerateSiteMap</b> of the object "websitetools" will be called, when the command "Generate Site Map" is entered. The config file: <b>config\General.php</b>, should contain the following line:</p>
+This entry means that the function **GenerateSiteMap** of the object "websitetools" will be called, when the command "Generate Site Map" is entered. The config file: **config\General.php**, should contain the following line:
 
-<pre><b>
+```
 /** The custom commands */
 $config['commands'] = array("Generate Site Map (generates site map of website)");
-</b></pre>
+```
 
-<p>The above command defines the commands implemented by the application. These commands are shown to the user when he enters the command: <b>php index.php --application=[app-name] --command="Help"</b>. This command lists all commands supported by the application.</p>
+The above command defines the commands implemented by the application. These commands are shown to the user when he enters the command:
 
-<p>The following code shows sample contents of the <b>Callables.txt</b> file:</p>
+```
+php index.php --application=[app-name] --command="Help"
+```
 
-<span data-toggle="collapse" data-target="#example3" class="cursor-pointer"><b><u>Click to view</u></b></span>
+This command lists all commands supported by the application.
 
-<pre id="example3" class="collapse"><b>
+The following code shows sample contents of the **Callables.txt** file:
+
+```
 url: ^/$
 callback: {"object": "homepage", "function": "Generate"}
 
@@ -189,59 +199,60 @@ callback: {"object": "contactpage", "function": "SendContactMessage"}
 
 command: Generate Site Map
 callback: {"object": "websitetools", "function": "GenerateSiteMap"}
-</b></pre>
+```
 
-<h5>Template Engine</h5>
-<p>The Pak Php Framework includes a template engine which allows user applications to merge application data with html templates</p>
+#### Template Engine
+The Pak Php Framework includes a template engine which allows user applications to merge application data with HTML templates
 
-<h5>Test Manager</h5>
-<p>The Pak Php Framework provides classes for testing code. Three types of tests are supported. <a href='https://en.wikipedia.org/wiki/White-box_testing'>White Box tests</a>, <a href='https://en.wikipedia.org/wiki/Black-box_testing'>Black Box tests</a> and Ui (user interface) tests</p>
+#### Test Manager
+The Pak Php Framework provides classes for testing code. Three types of tests are supported. [White Box tests](https://en.wikipedia.org/wiki/White-box_testing), [Black Box tests](https://en.wikipedia.org/wiki/Black-box_testing) and Ui (user interface) tests.
 
-<p>White Box tests are written like <a href='https://en.wikipedia.org/wiki/PHPUnit'>PhpUnit</a> tests. The user defines test methods in a file. Each method name should start with "Test". The test is then run from the command line. Assert statements may be used within the test methods to validate conditions.</p>
+White Box tests are written like [PhpUnit](https://en.wikipedia.org/wiki/PHPUnit) tests. The user defines test methods in a file. Each method name should start with "Test". The test is then run from the command line. Assert statements may be used within the test methods to validate conditions.
 
-<p>Black Box tests are written by defining test data inside test files. Each method has its own test data file. The first line in the test data file gives the list of parameters separated by '|'. The last three entries in the first line gives the expected return value, the type of the return value and the rule used to validate the return value. The test data file can be auto generated for each method defined by the application. The command:</p>
+Black Box tests are written by defining test data inside test files. Each method has its own test data file. The first line in the test data file gives the list of parameters separated by '|'. The last three entries in the first line gives the expected return value, the type of the return value and the rule used to validate the return value. The test data file can be auto generated for each method defined by the application. The command:
 
-<pre><b>php index.php --application="[app-name]" --action="Generate Test Data"</b></pre>
+```
+php index.php --application="[app-name]" --action="Generate Test Data"
+```
 
-<p>will generate test data files for each user defined method. The test data files will be placed in the folder: <b>test/testdata/{class-name}</b>. The name of the file is same as the name of the method. Following is a sample structure of a test data file:</p>
+will generate test data files for each user defined method. The test data files will be placed in the folder: **test/testdata/{class-name}**. The name of the file is same as the name of the method. Following is a sample structure of a test data file:
 
-<pre><b>
+```
 param_int_name1|param_int_name2|param_int_name3|return_name1|return_type|rule
 1|1|7|{"count":7}|array|count
-</b></pre>
+```
 
-<p>A Ui (user interface) test allows the html of the response to be checked for errors. The <a href='https://validator.nu/'>validator.nu</a> service is used to check if the html conforms with the HTML5 standard. Broken links are also checked as part of the Ui test. The test data for the Ui test is defined in a database table. See the structure of the table: <b>pakphp_test_data</b>. It has two main fields which are the url and url parameters. This data may be auto generated by setting the <b>save_ui_test_data</b> variable to <b>true</b> in <b>config/Test.php</b>. When this option is set to true, the framework saves the current url and parameters to database</p>
+A UI (user interface) test allows the HTML of the response to be checked for errors. The [validator.nu](https://validator.nu/) service is used to check if the HTML conforms with the HTML5 standard. Broken links are also checked as part of the Ui test. The test data for the Ui test is defined in a database table. See the structure of the table: **pakphp_test_data**. It has two main fields which are the URL and URL parameters. This data may be auto generated by setting the **save_ui_test_data** variable to **true** in **config/Test.php**. When this option is set to true, the framework saves the current URL and parameters to database
 
-<p>After a black box or white box test has been run, code coverage information for the test is displayed on the console and also saved to database. A summary of the test results is saved to database and file. A trace log of all function calls is also saved. The code coverage and function trace are generated using XDebug. The following screenshot shows the test results that are printed to the console after running black box tests:</p>
+After a black box or white box test has been run, code coverage information for the test is displayed on the console and also saved to database. A summary of the test results is saved to database and file. A trace log of all function calls is also saved. The code coverage and function trace are generated using XDebug. The following screenshot shows the test results that are printed to the console after running black box tests:
 
-<p><img src="https://www.pakjiddat.pk/pakjiddat/ui/images/black-box-test-results.png" alt="Black Box Testing Results" /></p>
+![Black Box Testing Results](black-box-test-results.png)
 
-<p>The following screenshot shows the code coverage summary after running black box tests</p>
+The following screenshot shows the code coverage summary after running black box tests:
 
-<p><img src="https://www.pakjiddat.pk/pakjiddat/ui/images/code-coverage.png" alt="Code Coverage Results" /></p>
+![Code Coverage Results](code-coverage.png)
 
-<h5>Utilities</h5>
-<p>The utilities folder contains classes that provide utility functions. These classes are used by the framework and may be used in user applications. See the <a href='/articles/view/257/utilities-framework'>Utilities Framework</a> package for information on how to use the utility classes.</p>
+#### Utilities
+The utilities folder contains classes that provide utility functions. These classes are used by the framework and may be used in user applications. See the [Utilities Framework](/posts/utilities-framework) package for information on how to use the utility classes.
 
-<h5>Vendors</h5>
-<p>The vendors folder contains third party libraries such as <a href='https://getbootstrap.com/'>Twitter Bootstrap</a>, <a href='https://jquery.com/'>JQuery</a>, <a href='https://www.w3schools.com/w3css/'>W3.CSS</a> and <a href='https://qunitjs.com/'>QUnit</a>. These frontend libraries can be used in html templates. Reusable widgets may be developed that allow developers to easily create attractive looking applications</p>
+#### Vendors
+The vendors folder contains third party libraries such as [Twitter Bootstrap](https://getbootstrap.com/), [JQuery](https://jquery.com/), [W3.CSS](https://www.w3schools.com/w3css/) and [QUnit](https://qunitjs.com/). These frontend libraries can be used in html templates. Reusable widgets may be developed that allow developers to easily create attractive looking applications.
 
-<h3>Installation</h3>
+#### Installation
+* Run the command:
 
-<ul>
-<li>Run the command: <b>composer require nadirlc/pak-php-framework</b> (Installation using Composer) <b>OR</b></li>
-<li>Run the command: <b>git clone https://github.com/nadirlc/pak-php-framework.git</b> (Download from <a href='https://github.com/nadirlc/pak-php-framework'>GitHub Repository</a>)</li>
-</ul>
+```
+composer require nadirlc/pak-php-framework (Installation using Composer) OR
+git clone https://github.com/nadirlc/pak-php-framework.git (Download from [GitHub Repository](https://github.com/nadirlc/pak-php-framework))
+```
 
-<p>After the source code has been downloaded, create a MySQL database called <b>pakjiddat_pakphp</b> and import the contents of the file <b>framework/data/pak-php-framework.sql</b> to the database. This will create the database tables used by the Pak Php Framework. These tables are used for saving error data, access logs, test data and test results</p>
+After the source code has been downloaded, create a MySQL database called **pakjiddat_pakphp** and import the contents of the file **framework/data/pak-php-framework.sql** to the database. This will create the database tables used by the Pak Php Framework. These tables are used for saving error data, access logs, test data and test results.
 
-<h3>Examples</h3>
-<p>The <b>helloworld</b> sample application shows how to get started with the Pak Php Framework. To run the application, enter the name of the host used to access the application in the <b>helloworld/Config.php</b> file. Replace <b>example.pakjiddat.pk</b> with <b>your-host-name</b>. Also enter the database server credentials in <b>helloworld/config/RequiredObjects.php</b>. After that open the application in the browser. You should see <a href='#hello-world-screen'>this screen</a></p>
+### Examples
+The **helloworld** sample application shows how to get started with the Pak Php Framework. To run the application, enter the name of the host used to access the application in the **helloworld/Config.php** file. Replace **example.pakjiddat.pk** with **your-host-name**. Also enter the database server credentials in **helloworld/config/RequiredObjects.php**. After that open the application in the browser.
 
-<p>For a more complex example you can download and install one of the following:</p>
+For a more complex example you can download and install one of the following:
 
-<ul>
-  <li><a href='https://github.com/nadirlc/developers-site'>Developers Site</a>. It is a simple website that allows web developers to publish their work</li>
-  <li><a href='https://github.com/nadirlc/quran-hadith-website'>Quran Hadith Website</a>. It allows users to read the Holy Quran and Hadith. Also allows subscribing to Holy Quran and Hadith by email</li>
-  <li><a href='https://github.com/nadirlc/quran-hadith-api'>Quran Hadith API</a>. It provides a RESETFul API for fetching Holy Quran and Hadith data</li>
-</ul>
+* [Developers Site](https://github.com/nadirlc/developers-site). It is a simple website that allows web developers to publish their work
+* [Islam Companion Website](https://github.com/nadirlc/islam-companion-website). It allows users to read the Holy Quran and Hadith. Also allows subscribing to Holy Quran and Hadith by email
+* [Islam Companion Web API](https://github.com/nadirlc/islam-companion-web-api). It provides a RESETFul API for fetching Holy Quran and Hadith data
