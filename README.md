@@ -1,4 +1,4 @@
-![Pak Php Framework Installation](https://pakjiddat.netlify.com/static/0bbdf53e45311e0a6f63599b55e00390/8c557/hello-world.png)
+![Pak Php Framework Installation](https://pakjiddat.netlify.app/static/0bbdf53e45311e0a6f63599b55e00390/8c557/hello-world.png)
 
 ### Introduction
 The Pak Php Framework is a framework for developing PHP applications. It can be used to develop command line applications as well as browser applications based on [Model View Controller (MVC) design pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
